@@ -23,11 +23,11 @@ return new class extends Migration
             $table->string('password');
             $table->text('token_recovery')->nullable();
             $table->dateTime('nacimiento');
-
-            $table->foreign('id_Direccion')->references('id')->on('direcciones')->onDelete('set null')->nullable();
-            $table->foreign('id_Tarjeta')->references('id')->on('Tarjetas')->onDelete('set null')->nullable();
+            $table->unsignedBigInteger('id_Direccion')->nullable();
+            $table->foreign('id_Direccion')->references('id')->on('direcciones')->onDelete('set null');
+            $table->unsignedBigInteger('id_Tarjeta')->nullable();
+            $table->foreign('id_Tarjeta')->references('id')->on('tarjetas')->onDelete('set null');
             
-            $table->timestamps();
             $table->timestamps();
         });
     }
