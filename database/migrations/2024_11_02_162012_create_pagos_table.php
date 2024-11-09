@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('pagos', function (Blueprint $table) {
             $table->id();
+            $table->date('fecha');
+            $table->double('monto');
             $table->timestamps();
         });
     }

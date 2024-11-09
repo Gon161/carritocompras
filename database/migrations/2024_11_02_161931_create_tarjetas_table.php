@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('tarjetas', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('numero_tarjeta');
+            $table->integer('cvv');
+            $table->date('fecha_vencimiento');
+            
+
             $table->timestamps();
         });
     }

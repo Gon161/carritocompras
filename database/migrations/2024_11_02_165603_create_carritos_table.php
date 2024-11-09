@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('articulo_pedidos', function (Blueprint $table) {
+        Schema::create('carritos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_Usuario')->nullable();
+            $table->foreign('id_Usuario')->references('id')->on('usuarios')->onDelete('set null');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articulo_pedidos');
+        Schema::dropIfExists('carritos');
     }
 };
