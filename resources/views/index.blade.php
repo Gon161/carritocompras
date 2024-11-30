@@ -20,7 +20,7 @@
 
 @section('contenido')
 
-    <div class="card col-3" >
+    <div class="card col-md-3" >
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -28,7 +28,7 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
-    <div class="card col-3" >
+    <div class="card col-md-3" >
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -36,7 +36,7 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
-    <div class="card col-3" >
+    <div class="card col-md-3" >
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -44,7 +44,7 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
-    <div class="card col-3" >
+    <div class="card col-md-3" >
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -52,7 +52,7 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
-    <div class="card col-3" >
+    <div class="card col-md-3" >
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>

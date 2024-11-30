@@ -26,7 +26,7 @@
 <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
 
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#">ambi-boy</a>
+        <a class="navbar-brand" href="#">ghmvhmhvhmv</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
@@ -37,7 +37,7 @@
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Carrito</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Favorito</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Iniciar Sesion</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('registro')}}">Registrate</a></li>
             </ul>
         </div>
     </div>
@@ -53,24 +53,6 @@
             @yield('contenido')
 
 
-
-            <!-- Pager-->
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group me-2" role="group" aria-label="First group">
-                    <button type="button" class="btn btn-primary">1</button>
-                    <button type="button" class="btn btn-primary">2</button>
-                    <button type="button" class="btn btn-primary">3</button>
-                    <button type="button" class="btn btn-primary">4</button>
-                </div>
-                <div class="btn-group me-2" role="group" aria-label="Second group">
-                    <button type="button" class="btn btn-secondary">5</button>
-                    <button type="button" class="btn btn-secondary">6</button>
-                    <button type="button" class="btn btn-secondary">7</button>
-                </div>
-                <div class="btn-group" role="group" aria-label="Third group">
-                    <button type="button" class="btn btn-info">8</button>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -115,6 +97,6 @@
 
 <!-- Bootstrap core JS-->
 <script src="{{asset('bootstrap/js/bootstrap.bundle.js')}}"></script>
-
+@yield('js')
 </body>
 </html>
