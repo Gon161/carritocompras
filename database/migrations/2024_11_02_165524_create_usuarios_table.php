@@ -18,16 +18,16 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('paterno');
             $table->string('materno');
-            $table->string('telefono',10);
+            $table->string('telefono',10)->nullable();
             $table->string('correo');
             $table->string('password');
             $table->text('token_recovery')->nullable();
-            $table->dateTime('nacimiento');
+            $table->dateTime('nacimiento')->nullable();
             $table->unsignedBigInteger('id_Direccion')->nullable();
             $table->foreign('id_Direccion')->references('id')->on('direcciones')->onDelete('set null');
             $table->unsignedBigInteger('id_Tarjeta')->nullable();
             $table->foreign('id_Tarjeta')->references('id')->on('tarjetas')->onDelete('set null');
-            
+
             $table->timestamps();
         });
     }
