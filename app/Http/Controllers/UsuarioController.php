@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class UsuarioController extends Controller
 {
@@ -55,5 +57,34 @@ class UsuarioController extends Controller
         $usuario->save();
 
         return view("login", ["estatus" => "success", "mensaje" => "¡Cuenta Creada!"]);
+    }
+    public function verificarCredenciales(Request $datos)
+    {
+        if (!$datos->correo || !$datos->pass)
+            return view("login", ["estatus" => "error", "mensaje" => "¡Completa los campos!"]);
+
+        $usuario = Usuario::where('correo', $datos->correo)->first();
+
+        if (!$usuario)
+            return view("login", ["estatus" => "error", "mensaje" => "¡El correo no esta registrado!"]);
+
+
+        if (!password_verify($datos->pass, $usuario->password))
+            return view("login", ["estatus" => "error", "mensaje" => "¡La contraseña que ingresaste es incorrecta!"]);
+
+        Session::put('usuario', $usuario);
+
+        if (isset($datos->url)) {
+            $url = decrypt($datos->url);
+            return redirect($url);
+        } else {
+            return redirect()->route('inicioapp');
+        }
+
+    }
+
+    function inicioSesion()
+    {
+        return view("index");
     }
 }

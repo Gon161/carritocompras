@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
+    <link rel="icon" type="image/x-icon" href="{{asset('img/logo.ico')}}">
     @yield('titulo')
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <!-- Font Awesome icons (free version)-->
@@ -23,10 +24,10 @@
 </head>
 <body>
 <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" id="mainNav">
 
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#">ghmvhmhvhmv</a>
+        <a class="navbar-brand" href="#"><img src="{{asset('img/logo.png')}}" style="width: 40px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
@@ -37,7 +38,14 @@
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Carrito</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Favorito</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('registro')}}">Registrate</a></li>
+                @if(isset(session('usuario')->id))
+                    Bienvenido {{session('usuario')->nombre}}
+                    </li>
+                @else
+
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{route('registro')}}">Registrate</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
